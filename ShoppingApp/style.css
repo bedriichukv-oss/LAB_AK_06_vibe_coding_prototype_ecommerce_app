@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+}
+
+#container {
+  display: flex;
+  min-height: 100vh;
+}
+
+nav {
+  background: #fff;
+  border-right: 1px solid #eee;
+  min-width: 180px;
+  max-width: 220px;
+  transition: max-width 0.3s, min-width 0.3s;
+  padding: 0;
+  box-shadow: 2px 0 8px #eee;
+}
+
+nav.collapsed {
+  min-width: 32px;
+  max-width: 40px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  padding: 18px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+nav li.active, nav li:hover {
+  background: #e0f7fa;
+  color: #00796b;
+}
+
+nav .abbr {
+  display: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+nav.collapsed .label {
+  display: none;
+}
+nav.collapsed .abbr {
+  display: inline;
+}
+
+#main-content {
+  flex: 1;
+  padding: 32px 16px;
+  min-width: 0;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #eee;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-card .emoji {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.cart-list, .checkout-list {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 24px auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #eee;
+  padding: 18px;
+}
+
+.cart-item, .checkout-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.cart-item:last-child, .checkout-item:last-child {
+  border-bottom: none;
+}
+
+input[type="number"] {
+  width: 48px;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin: 0 8px;
+}
+
+button {
+  background: #00796b;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 6px;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #004d40;
+}
+
+@media (max-width: 600px) {
+  #main-content {
+    padding: 12px 2px;
+  }
+  .product-list {
+    grid-template-columns: 1fr;
+  }
+}
