@@ -18,15 +18,15 @@ let selectedProductId = null;
 
 function renderNav() {
   const navItems = [
-    { page: 'products', label: 'Products', abbr: 'P' },
-    { page: 'productdetails', label: 'Product Details', abbr: 'D' },
-    { page: 'cart', label: 'Shopping Cart', abbr: 'C' },
-    { page: 'checkout', label: 'Checkout', abbr: 'O' }
+    { page: 'products', label: 'Products', abbr: 'P', emoji: '🍎' },
+    { page: 'productdetails', label: 'Product Details', abbr: 'D', emoji: '🔍' },
+    { page: 'cart', label: 'Shopping Cart', abbr: 'C', emoji: '🛒' },
+    { page: 'checkout', label: 'Checkout', abbr: 'O', emoji: '💳' }
   ];
   const collapsed = window.innerWidth < 600;
   return `<nav class="${collapsed ? 'collapsed' : ''}"><ul>\n${navItems.map(item => `
     <li class="${currentPage === item.page ? 'active' : ''}" onclick="navigate('${item.page}')">
-      <span class="abbr">${item.abbr}</span><span class="label">${item.label}</span>
+      <span class="nav-emoji">${item.emoji}</span><span class="abbr">${item.abbr}</span><span class="label">${item.label}</span>
     </li>`).join('')}\n</ul></nav>`;
 }
 

@@ -57,6 +57,22 @@ nav li.active, nav li:hover {
   color: #00796b;
 }
 
+nav .nav-emoji {
+  display: inline-block;
+  width: 32px;
+  text-align: center;
+  font-size: 1.3rem;
+  margin-right: 8px;
+  transition: margin 0.2s;
+}
+nav.collapsed .nav-emoji {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-right: 0;
+}
 nav .abbr {
   display: none;
   font-weight: bold;

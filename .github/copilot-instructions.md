@@ -1,3 +1,6 @@
+## Navigation Bar Emojis
+- Each navigation bar item displays an emoji representing the page (e.g., 🍎 for Products, 🔍 for Product Details, 🛒 for Shopping Cart, 💳 for Checkout).
+- When the navigation bar is collapsed (width < 600px), the emoji is centered horizontally in the nav bar for each item.
 # Vibe Coding Prototype App – Product Requirements Document (PRD)
 
 ## 1. App Overview / Purpose
