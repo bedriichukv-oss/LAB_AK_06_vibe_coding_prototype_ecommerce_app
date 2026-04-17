@@ -27,7 +27,7 @@ A client-side web app for online shoppers to browse, select, and order fruit pro
 
 ## 4. Navigation Flow
 - Left-side navigation menu for switching between Products, ProductDetails, ShoppingCart, and Checkout pages.
-- Menu collapses to 1–2 letter abbreviations when display width < 300px.
+- Menu collapses to 1–2 letter abbreviations when display width < 600px.
 
 ## 5. Sample Dataset
 - 10 fruit products, each with:
@@ -44,7 +44,7 @@ A client-side web app for online shoppers to browse, select, and order fruit pro
 ## 7. Styling Guidelines
 - Visually appealing, basic styling
 - Dynamic UI that scales for desktop and phone screens
-- Navigation bar collapses on small screens
+- Navigation bar collapses on small screens (width < 600px)
 - Not fully responsive or polished
 
 ## 8. Use Cases / User Stories
@@ -64,7 +64,7 @@ A client-side web app for online shoppers to browse, select, and order fruit pro
 - Product list and details display correctly.
 - Cart functionality (add, update, remove) works.
 - Checkout summary and total price are accurate.
-- Navigation bar collapses as specified.
+- Navigation bar collapses as specified (width < 600px).
 
 ---
 
@@ -79,7 +79,7 @@ A client-side web app for online shoppers to browse, select, and order fruit pro
 | Checkout            |                                      |
 +---------------------+--------------------------------------+
 
-## Navigation Bar (Collapsed, width < 300px)
+## Navigation Bar (Collapsed, width < 600px)
 -----------------------------------------
 +--+--------------------------------------+
 |P |                                      |

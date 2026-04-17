@@ -1,7 +1,102 @@
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #f7f7f7;
+}
+
+#container {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+nav {
+  background: #fff;
+  border-right: 1px solid #eee;
+  min-width: 180px;
+  max-width: 220px;
+  transition: max-width 0.3s, min-width 0.3s;
+  padding: 0;
+  box-shadow: 2px 0 8px #eee;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+
+nav.collapsed {
+  min-width: 32px;
+  max-width: 40px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+nav li {
+  padding: 18px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+nav li.active, nav li:hover {
+  background: #e0f7fa;
+  color: #00796b;
+}
+
+nav .abbr {
+  display: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+nav.collapsed .label {
+  display: none;
+}
+nav.collapsed .abbr {
+  display: inline;
+}
+
+#main-content {
+  flex: 1;
+  padding: 32px 16px;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  #container {
+    flex-direction: row;
+    width: 100vw;
+  }
+  nav {
+    min-width: 32px;
+    max-width: 40px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+  #main-content {
+    padding: 12px 2px;
+  }
+  .product-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 #container {
@@ -22,6 +117,13 @@ nav {
 nav.collapsed {
   min-width: 32px;
   max-width: 40px;
+}
+
+@media (max-width: 600px) {
+  nav.collapsed {
+    min-width: 32px;
+    max-width: 40px;
+  }
 }
 
 nav ul {
