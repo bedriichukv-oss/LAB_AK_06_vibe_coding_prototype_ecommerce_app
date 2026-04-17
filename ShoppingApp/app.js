@@ -12,9 +12,12 @@ const products = [
   { id: 10, name: 'Cherry', emoji: '🍒', description: 'Sweet cherries', price: 3.5, unit: 'lb' }
 ];
 
+
 let cart = [];
 let currentPage = 'products';
 let selectedProductId = null;
+let notification = '';
+let notificationTimeout = null;
 
 function renderNav() {
   const navItems = [
@@ -24,10 +27,17 @@ function renderNav() {
     { page: 'checkout', label: 'Checkout', abbr: 'O', emoji: '💳' }
   ];
   const collapsed = window.innerWidth < 600;
-  return `<nav class="${collapsed ? 'collapsed' : ''}"><ul>\n${navItems.map(item => `
+  return `<nav class="${collapsed ? 'collapsed' : ''}"><ul>\n${navItems.map(item => {
+    let badge = '';
+    if (item.page === 'cart' && cart.length > 0) {
+      const totalQty = cart.reduce((sum, i) => sum + i.qty, 0);
+      badge = `<span class="cart-badge">${totalQty}</span>`;
+    }
+    return `
     <li class="${currentPage === item.page ? 'active' : ''}" onclick="navigate('${item.page}')">
-      <span class="nav-emoji">${item.emoji}</span><span class="abbr">${item.abbr}</span><span class="label">${item.label}</span>
-    </li>`).join('')}\n</ul></nav>`;
+      <span class="nav-emoji">${item.emoji}${badge}</span><span class="abbr">${item.abbr}</span><span class="label">${item.label}</span>
+    </li>`;
+  }).join('')}\n</ul></nav>`;
 }
 
 function navigate(page, productId) {
@@ -102,6 +112,16 @@ function cartTotal() {
   }, 0);
 }
 
+function showNotification(msg, duration = 2500) {
+  notification = msg;
+  renderApp();
+  if (notificationTimeout) clearTimeout(notificationTimeout);
+  notificationTimeout = setTimeout(() => {
+    notification = '';
+    renderApp();
+  }, duration);
+}
+
 function addToCart(productId, fromDetails) {
   const qtyInputId = fromDetails ? 'details-qty' : `qty-${productId}`;
   const qty = parseInt(document.getElementById(qtyInputId).value, 10) || 1;
@@ -111,7 +131,8 @@ function addToCart(productId, fromDetails) {
   } else {
     cart.push({ productId, qty });
   }
-  renderApp();
+  showNotification('Added to cart!');
+}
 }
 
 function updateCartQty(productId, qty) {
@@ -123,13 +144,12 @@ function updateCartQty(productId, qty) {
 
 function removeFromCart(productId) {
   cart = cart.filter(i => i.productId !== productId);
-  renderApp();
+  showNotification('Removed from cart.');
 }
 
-function processOrder() {
-  alert('Order processed! (Prototype only)');
   cart = [];
-  renderApp();
+  showNotification('Thank you! Your order has been processed.', 3500);
+  navigate('products');
 }
 
 function renderMainContent() {
@@ -147,12 +167,14 @@ function renderMainContent() {
   }
 }
 
-function renderApp() {
   const app = document.getElementById('app');
-  app.innerHTML = `<div id="container">
-    ${renderNav()}
-    <div id="main-content">${renderMainContent()}</div>
-  </div>`;
+  app.innerHTML = `
+    <div id="container">
+      ${renderNav()}
+      <div id="main-content">${renderMainContent()}</div>
+    </div>
+    ${notification ? `<div class="notification-banner">${notification}</div>` : ''}
+  `;
 }
 
 window.addEventListener('resize', () => {

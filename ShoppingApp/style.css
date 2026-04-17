@@ -1,3 +1,39 @@
+/* Notification banner/toast */
+.notification-banner {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  background: #00796b;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px #0002;
+  font-size: 1.1rem;
+  z-index: 1000;
+  animation: fadeInOut 0.4s;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* Cart badge */
+.cart-badge {
+  display: inline-block;
+  background: #e53935;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  min-width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  margin-left: 2px;
+  vertical-align: top;
+  font-weight: bold;
+}
 
 body {
   margin: 0;

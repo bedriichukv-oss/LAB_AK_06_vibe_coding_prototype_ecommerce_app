@@ -1,3 +1,7 @@
+## User Experience Improvements
+- In-app notification banners (toasts) are used instead of alert() popups for actions like adding/removing items and processing orders.
+- After processing an order, a confirmation/thank you message is shown to the user.
+- The navigation bar displays a badge on the cart icon showing the total number of items in the cart.
 ## Navigation Bar Emojis
 - Each navigation bar item displays an emoji representing the page (e.g., 🍎 for Products, 🔍 for Product Details, 🛒 for Shopping Cart, 💳 for Checkout).
 - When the navigation bar is collapsed (width < 600px), the emoji is centered horizontally in the nav bar for each item.
