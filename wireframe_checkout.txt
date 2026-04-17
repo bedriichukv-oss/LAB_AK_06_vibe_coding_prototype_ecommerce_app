@@ -1,0 +1,9 @@
+Checkout Page
+-------------
++---------------------+--------------------------------------+
+| Products            |  Order Summary:                      |
+| Product Details     |  🍎 Apple   Qty: 2   $2.00           |
+| Shopping Cart       |  🍌 Banana  Qty: 1   $0.50           |
+| Checkout            |  Total: $2.50                        |
+|                     |  [Process Order]                     |
++---------------------+--------------------------------------+

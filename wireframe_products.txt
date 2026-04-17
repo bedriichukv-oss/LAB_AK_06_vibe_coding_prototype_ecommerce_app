@@ -1,0 +1,9 @@
+Products Page
+-------------
++---------------------+--------------------------------------+
+| Products            |  🍎 Apple      $1.00/each  [Qty][Add] |
+| Product Details     |  🍌 Banana     $0.50/each  [Qty][Add] |
+| Shopping Cart       |  🍊 Orange     $0.80/each  [Qty][Add] |
+| Checkout            |  ...                                  |
++---------------------+--------------------------------------+
+- Each product row: [Emoji] Name  Price/Unit  [Quantity Selector] [Add to Cart]

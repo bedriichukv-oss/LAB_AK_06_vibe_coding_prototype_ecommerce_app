@@ -1,0 +1,8 @@
+Product Details Page
+--------------------
++---------------------+--------------------------------------+
+| Products            |  🍎 Apple                            |
+| Product Details     |  Description: Crisp and sweet apple  |
+| Shopping Cart       |  Price: $1.00/each                   |
+| Checkout            |  [Back to Products] [Qty][Add to Cart]|
++---------------------+--------------------------------------+

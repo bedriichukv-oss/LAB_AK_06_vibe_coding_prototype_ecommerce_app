@@ -1,0 +1,9 @@
+Shopping Cart Page
+------------------
++---------------------+--------------------------------------+
+| Products            |  Cart Items:                         |
+| Product Details     |  🍎 Apple   Qty: 2   $2.00 [Update][X]|
+| Shopping Cart       |  🍌 Banana  Qty: 1   $0.50 [Update][X]|
+| Checkout            |  Total: $2.50                        |
++---------------------+--------------------------------------+
+- Each item: [Emoji] Name  Qty: [number]  Total $  [Update Qty] [Remove]

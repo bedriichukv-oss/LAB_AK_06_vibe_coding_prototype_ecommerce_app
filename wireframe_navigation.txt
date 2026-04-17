@@ -1,0 +1,18 @@
+Navigation Bar (Expanded)
+-------------------------
++---------------------+--------------------------------------+
+| Products            |                                      |
+| Product Details     |   [ Main Content Area ]              |
+| Shopping Cart       |                                      |
+| Checkout            |                                      |
++---------------------+--------------------------------------+
+
+Navigation Bar (Collapsed, width < 300px)
+-----------------------------------------
++--+--------------------------------------+
+|P |                                      |
+|D |   [ Main Content Area ]              |
+|C |                                      |
+|O |                                      |
++--+--------------------------------------+
+Legend: P = Products, D = Details, C = Cart, O = Checkout
