@@ -1,0 +1,2 @@
+# LAB_AK_06_vibe_coding_prototype_ecommerce_app
+LAB_AK_06_vibe_coding_prototype_ecommerce_app
